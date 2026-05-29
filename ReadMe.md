@@ -63,12 +63,11 @@ Cost of reactivation likely exceeds return — recommend deprioritizing vs At Ri
 
 ## Project Structure
 
-rfm_customer_segmentation/
-│
-├── rfm_analysis.ipynb       # Full analysis notebook
-├── rfm_results.xlsx         # RFM scores and segment summary
-├── rfm_dashboard.png        # Customer segmentation visualizations
-└── README.md
+ --rfm_customer_segmentation/
+-- rfm_analysis.ipynb       # Full analysis notebook
+ --rfm_results.xlsx         # RFM scores and segment summary
+ --rfm_dashboard.png        # Customer segmentation visualizations
+ --README.md
 Data used: https://www.kaggle.com/datasets/carrie1/ecommerce-data
 
 ---
