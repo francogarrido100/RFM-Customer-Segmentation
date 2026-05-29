@@ -22,6 +22,7 @@ Each customer receives a score from 1–5 per dimension, enabling precise segmen
 ## Key Findings
 
 ### 👑 Champions Drive Almost Everything
+
 | Segment | Customers | Revenue | Avg Ticket |
 |---------|-----------|---------|------------|
 | Champions | 962 | 65.2% | $6,039 |
@@ -32,13 +33,11 @@ Each customer receives a score from 1–5 per dimension, enabling precise segmen
 | Lost | 556 | 1.4% | $227 |
 | Promising | 248 | 0.7% | $253 |
 
-962 customers (22% of the base) generate 65% of all revenue.
-Losing even a fraction of Champions would critically damage the business.
+962 customers (22% of the base) generate 65% of all revenue. Losing even a fraction of Champions would critically damage the business.
 
 ### 🚨 At Risk: The Urgent Priority
 454 high-value customers (avg ticket $1,635) haven't purchased in ~142 days.
-These were once strong buyers — a targeted win-back campaign could recover significant revenue
-before they move to the Lost segment permanently.
+These were once strong buyers — a targeted win-back campaign could recover significant revenue before they move to the Lost segment permanently.
 
 ### ⚠️ Need Attention: The Hidden Opportunity
 The largest segment (1,041 customers) but only 7% of revenue.
@@ -63,14 +62,16 @@ Cost of reactivation likely exceeds return — recommend deprioritizing vs At Ri
 
 ## Project Structure
 
- --rfm_customer_segmentation/
--- rfm_analysis.ipynb       # Full analysis notebook
- --rfm_results.xlsx         # RFM scores and segment summary
- --rfm_dashboard.png        # Customer segmentation visualizations
- --README.md
+    rfm_customer_segmentation/
+    │
+    ├── rfm_analysis.ipynb       # Full analysis notebook
+    ├── rfm_results.xlsx         # RFM scores and segment summary
+    ├── rfm_dashboard.png        # Customer segmentation visualizations
+    └── README.md
+
 Data used: https://www.kaggle.com/datasets/carrie1/ecommerce-data
 
 ---
 
 ## Author
-Franco Garrido · [GitHub](https://github.com/francogarrido100) · [Upwork](https://www.upwork.com/freelancers/~01464eeecfaee2a8a5?mp_source=share)
+Franco Garrido · [GitHub](https://github.com/francogarrido100) · [Upwork](https://www.upwork.com/freelancers/~01464eeecfaee2a8a5)
