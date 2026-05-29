@@ -70,8 +70,7 @@ Cost of reactivation likely exceeds return — recommend deprioritizing vs At Ri
     └── README.md
 
 Data used: https://www.kaggle.com/datasets/carrie1/ecommerce-data 
-
-                                                                                                                                             📓 [View Full Notebook](https://francogarrido100.github.io/RFM-Customer-Segmentation/rfm_analysis.html)
+In case you can't see the ioynb file, 📓 [View Full Notebook](https://francogarrido100.github.io/RFM-Customer-Segmentation/rfm_analysis.html)
 ---
 
 ## Author
