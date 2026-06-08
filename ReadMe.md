@@ -1,30 +1,31 @@
-# RFM Customer Segmentation Analysis 🛍️
+# Segmentación de Clientes (RFM) — ¿A quién protejo y a quién recupero primero?
 
-## Overview
-End-to-end customer segmentation analysis using the RFM model (Recency, Frequency, Monetary)
-applied to 12 months of real e-commerce transactional data (541K+ transactions, 4,338 customers).
-The goal was to identify actionable customer segments to optimize marketing spend and retention strategy.
-
-**Tools:** Python · Pandas · Matplotlib · Seaborn · Excel
+> **El 22% de los clientes genera el 65% del revenue — y 454 de los compradores más valiosos llevan ~142 días sin volver a comprar.** Esta segmentación identifica exactamente quiénes son, y en qué orden actuar antes de perderlos.
 
 ---
 
-## What is RFM?
-RFM is a proven marketing framework that scores each customer across three dimensions:
-- **Recency** — How recently did they purchase?
-- **Frequency** — How often do they purchase?
-- **Monetary** — How much have they spent in total?
+## El problema de negocio
 
-Each customer receives a score from 1–5 per dimension, enabling precise segmentation.
+Una empresa de e-commerce con 4,338 clientes activos y 541K+ transacciones en 12 meses no tenía forma de responder preguntas básicas para planificar retención: ¿en quién conviene invertir el presupuesto de marketing esta semana? ¿quién está a punto de irse? ¿a quién ya no vale la pena perseguir?
+
+Apliqué el modelo **RFM (Recency, Frequency, Monetary)** para convertir esa masa de transacciones en 7 segmentos accionables, y prioricé qué hacer con cada uno.
 
 ---
 
-## Key Findings
+## Dashboard
 
-### 👑 Champions Drive Almost Everything
+![Segmentación de clientes — dashboard](rfm_dashboard.png)
 
-| Segment | Customers | Revenue | Avg Ticket |
-|---------|-----------|---------|------------|
+*Cada panel responde una decisión concreta: dónde está concentrado el revenue, cuánto vale cada segmento, dónde enfocar el presupuesto de retención primero, y quién se está alejando.*
+
+---
+
+## Hallazgos clave
+
+**1. La base de clientes es altamente concentrada — y eso es una vulnerabilidad, no solo una buena noticia**
+
+| Segmento | Clientes | % del Revenue | Ticket promedio |
+|---|---|---|---|
 | Champions | 962 | 65.2% | $6,039 |
 | Loyal Customers | 758 | 15.7% | $1,843 |
 | At Risk | 454 | 8.3% | $1,635 |
@@ -33,45 +34,55 @@ Each customer receives a score from 1–5 per dimension, enabling precise segmen
 | Lost | 556 | 1.4% | $227 |
 | Promising | 248 | 0.7% | $253 |
 
-962 customers (22% of the base) generate 65% of all revenue. Losing even a fraction of Champions would critically damage the business.
+Perder una fracción de los Champions golpearía el negocio de forma desproporcionada frente a su tamaño relativo (22% de la base).
 
-### 🚨 At Risk: The Urgent Priority
-454 high-value customers (avg ticket $1,635) haven't purchased in ~142 days.
-These were once strong buyers — a targeted win-back campaign could recover significant revenue before they move to the Lost segment permanently.
+**2. "At Risk" es la prioridad número uno — no "Lost"**
 
-### ⚠️ Need Attention: The Hidden Opportunity
-The largest segment (1,041 customers) but only 7% of revenue.
-They bought before but engagement is fading (118 days avg recency, only 1.7 orders avg).
-Low-cost reactivation campaigns (email, discount) could unlock meaningful upside.
+454 clientes de alto valor (ticket promedio $1,635) llevan ~142 días sin comprar. Fueron compradores fuertes; todavía están a tiempo de ser recuperados con una campaña de win-back dirigida — a diferencia de "Lost" (280 días de inactividad promedio), donde el costo de reactivación probablemente supera el retorno.
 
-### 📉 Lost Segment: Triage Decision
-556 customers averaging 280 days inactive with low spend history.
-Cost of reactivation likely exceeds return — recommend deprioritizing vs At Risk.
+**3. "Need Attention" es la oportunidad de bajo costo más grande**
+
+Es el segmento más numeroso (1,041 clientes) pero solo aporta 7% del revenue. Compraron antes, pero su actividad cae (118 días de recencia promedio, apenas 1.7 órdenes). Una secuencia de reactivación por email de bajo costo puede destrabar este volumen.
 
 ---
 
-## Business Recommendations
+## Recomendaciones priorizadas
 
-1. **Protect Champions** — loyalty program, exclusive perks, early access to new products
-2. **Win back At Risk immediately** — personalized email campaign within 30 days
-3. **Reactivate Need Attention** — low-cost email sequence with soft incentive
-4. **Nurture New Customers** — onboarding sequence to convert them into Loyal Customers
-5. **Deprioritize Lost** — minimal spend, broad reactivation only if budget allows
-
----
-
-## Project Structure
-
-    rfm_customer_segmentation/
-    │
-    ├── rfm_analysis.ipynb       # Full analysis notebook
-    ├── rfm_results.xlsx         # RFM scores and segment summary
-    ├── rfm_dashboard.png        # Customer segmentation visualizations
-    └── README.md
-
-Data used: https://www.kaggle.com/datasets/carrie1/ecommerce-data
+| # | Acción | Por qué primero |
+|---|---|---|
+| 1 | Programa de fidelización y beneficios exclusivos para Champions | Protege al 22% de clientes que sostiene dos tercios del negocio |
+| 2 | Campaña de recuperación dirigida a "At Risk" dentro de 30 días | Última ventana realista antes de que pasen a "Lost" de forma permanente |
+| 3 | Secuencia de reactivación de bajo costo para "Need Attention" | Mayor volumen de clientes a menor costo de conversión |
+| 4 | Onboarding para convertir "New Customers" en leales | Define si el negocio crece o solo repone bajas |
+| 5 | Despriorizar "Lost" | El costo de reactivación supera el retorno esperado |
 
 ---
 
-## Author
-Franco Garrido · [GitHub](https://github.com/francogarrido100) · [Upwork](https://www.upwork.com/freelancers/~01464eeecfaee2a8a5)
+## Cómo se construyó
+
+- Cálculo de Recency, Frequency y Monetary por cliente sobre 12 meses de transacciones
+- Scoring 1–5 por dimensión y combinación en 7 segmentos estándar de la industria
+- Resumen por segmento (tamaño, revenue, ticket promedio) para soportar la priorización
+
+**Stack:** Python · Pandas · Matplotlib · Seaborn · Excel
+
+---
+
+## Estructura del repositorio
+
+```
+rfm_customer_segmentation/
+│
+├── rfm_analysis.ipynb     # Notebook completo (cálculo RFM + segmentación + visualizaciones)
+├── rfm_results.xlsx       # Scores RFM por cliente y resumen por segmento
+├── rfm_dashboard.png      # Dashboard de segmentación
+└── ReadMe.md
+```
+
+Dataset: [E-commerce Data (Kaggle)](https://www.kaggle.com/datasets/carrie1/ecommerce-data)
+
+---
+
+## Autor
+
+Franco Garrido — Economista especializado en analítica de negocio · [GitHub](https://github.com/francogarrido100) · [LinkedIn](https://www.linkedin.com/in/franco-garrido) · [Upwork](https://www.upwork.com/freelancers/~01464eeecfaee2a8a5)
