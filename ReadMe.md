@@ -81,6 +81,8 @@ rfm_customer_segmentation/
 
 Dataset: [E-commerce Data (Kaggle)](https://www.kaggle.com/datasets/carrie1/ecommerce-data)
 
+📓 [Ver notebook completo](https://francogarrido100.github.io/RFM-Customer-Segmentation/rfm_analysis.html) (si no se visualiza el .ipynb en GitHub)
+
 ---
 
 ## Autor
